@@ -1,0 +1,57 @@
+<!-- <main>
+    <header>
+        <div class="close-area"></div>
+        <input placeholder="https://..." value="https://mariosouto.com" />
+    </header>
+    <iframe src="https://mariosouto.com"></iframe>
+</main> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Browser Experimental</title>
+</head>
+<body>
+
+    <script>
+        // Oq tem na aba do navegador ?
+        // titulo, url , pag de fato (html/css/js)
+    
+        // Objestos: Representam coisas com multiplos atributos pra representá-las
+        var aba1 = {
+            titulo: 'Titulo da aba 1',
+            url: 'https://omariosouto.github.io/pucpos-code/a2b1/02-browser/style.css'
+        }
+    
+        var aba2 = {
+            titulo: 'Titulo da aba 2',
+            url: 'https://omariosouto.github.io/pucpos-code/a2b1/02-browser/style.css'
+        }
+    
+        // [ENTRADA]
+        // Arrays: Lista de coisas
+        const abas = [ 
+            aba1,
+            aba2 
+        ]
+
+        // [PROCESSAMENTO]
+        for(aba of abas){
+            console.log(aba.titulo)
+            // [OUTPUT]
+            var valorAtualDoHTML = document.body.innerHTML
+            document.body.innerHTML = valorAtualDoHTML + `<li><a href="${aba.url}">${aba.titulo}</a></li>` 
+        }
+    
+
+    
+    
+    </script>
+    
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    
+</body>
+</html>
+

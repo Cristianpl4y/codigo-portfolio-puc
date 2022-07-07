@@ -1,0 +1,33 @@
+<input placeholder="Distancia em Km" id="campoDistanciaEmKM">
+<input placeholder="Tempo em minutos" id="campoTempoEmMin">
+<button onclick="calculaCorrida()">Calcular</button>
+
+<script>
+    function formataMoeda(valor){
+        return valor.toFixed(2).replace('.', ',')
+    }
+
+    function calculaCorrida(){
+        //[PROCESSAMENTO]
+        // Validar entradas / Fail Fast Validations
+        let campoDistanciaEntaVazio = campoDistanciaEmKM.value == ''
+        if(campoDistanciaEntaVazio){
+            alert('Não temos o valor da distancia')
+            return 
+        }
+
+
+        //Organizar as entradas e aplicar a regra de negócio
+        let tarifaDinamica = 1.4
+        let distanciaEmKM = campoDistanciaEmKM.value * tarifaDinamica
+        let tempoEmMin = campoTempoEmMin.value * 0.26
+        let valorDaCorrida = distanciaEmKM + tempoEmMin
+        let valorFormatado = formataMoeda(valorDaCorrida)
+        
+
+        // [OUTPUT]
+        alert(`O Valor total da corrida: ${valorFormatado}`)
+    }
+
+
+</script>
